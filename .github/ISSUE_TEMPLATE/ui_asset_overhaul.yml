@@ -1,0 +1,173 @@
+name: UI Asset (Overhaul Tracking)
+description: Track creation, integration, and testing of UI assets for the Complete UI Overhaul initiative.
+title: "[UI Overhaul] <Asset Name>"
+labels: [asset, ui, overhaul, tracking, enhancement]
+body:
+  - type: input
+    id: overhaul_category
+    attributes:
+      label: Overhaul Category
+      description: Which major UI area or system is this asset part of?
+      placeholder: e.g. Store, HUD, Settings, Main Menu, Daily Rewards, Inventory
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority Level
+      description: What is the priority level of this asset in the overhaul?
+      options:
+        - Critical
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+
+  - type: input
+    id: code_name
+    attributes:
+      label: Code Name (Internal)
+      description: What is the internal or code name for this UI asset?
+      placeholder: e.g. store_gamepass_frame, main_menu_nav_bar
+    validations:
+      required: true
+
+  - type: input
+    id: display_name
+    attributes:
+      label: Display Name
+      description: What is the user-facing display name for this asset?
+      placeholder: e.g. Gamepass Store Frame, Main Navigation Bar
+    validations:
+      required: true
+
+  - type: textarea
+    id: goals
+    attributes:
+      label: Overhaul Goals & Description
+      description: Describe the asset and what specific goals it aims to achieve in the overhaul (user experience improvements, clarity, accessibility, etc.).
+      placeholder: e.g. Redesigned store interface to improve gamepass discovery and purchase flow. Goals include better visual hierarchy, clearer pricing display, and mobile responsiveness.
+    validations:
+      required: true
+
+  - type: input
+    id: checklist_mapping
+    attributes:
+      label: Checklist Mapping
+      description: Reference the specific item(s) in the Overhaul Checklist that this asset implements.
+      placeholder: e.g. Store Section > Gamepass Display; HUD Section > Health Bar Redesign
+    validations:
+      required: true
+
+  - type: textarea
+    id: design_references
+    attributes:
+      label: Design References
+      description: Link to design files, Figma mockups, or visual references for this asset.
+      placeholder: e.g. Figma link, concept art URL, reference images
+
+  - type: dropdown
+    id: wireframe_status
+    attributes:
+      label: Wireframe Status
+      description: Current status of wireframe/initial design mockup.
+      options:
+        - Not Started
+        - In Progress
+        - Complete
+        - Not Applicable
+    validations:
+      required: true
+
+  - type: dropdown
+    id: design_status
+    attributes:
+      label: Final Design Status
+      description: Current status of the finalized design (Figma, Photoshop, etc.).
+      options:
+        - Not Started
+        - In Progress
+        - Complete
+        - Approved
+    validations:
+      required: true
+
+  - type: dropdown
+    id: art_asset_status
+    attributes:
+      label: Art Asset Creation Status
+      description: Current status of creating the actual art assets (images, icons, etc.).
+      options:
+        - Not Started
+        - In Progress
+        - Complete
+    validations:
+      required: true
+
+  - type: dropdown
+    id: studio_import_status
+    attributes:
+      label: Studio Import Status
+      description: Has the asset been imported into Roblox Studio?
+      options:
+        - Not Started
+        - In Progress
+        - Complete
+    validations:
+      required: true
+
+  - type: dropdown
+    id: code_integration_status
+    attributes:
+      label: Code Integration Status
+      description: Has the UI been integrated into the game codebase?
+      options:
+        - Not Started
+        - In Progress
+        - Complete
+    validations:
+      required: true
+
+  - type: dropdown
+    id: testing_status
+    attributes:
+      label: Testing Status
+      description: Current status of testing the UI asset.
+      options:
+        - Not Started
+        - In Progress
+        - Complete
+        - Passed
+        - Failed
+    validations:
+      required: true
+
+  - type: textarea
+    id: testing_notes
+    attributes:
+      label: Testing Notes
+      description: Special testing considerations for the overhaul (accessibility, user feedback, device compatibility, etc.).
+      placeholder: e.g. Test on mobile devices, verify accessibility scaling, gather feedback from new users on clarity and ease of use.
+
+  - type: textarea
+    id: implementation_prs
+    attributes:
+      label: Implementation PRs/Commits
+      description: Link to relevant pull requests or commits where this asset is being implemented.
+      placeholder: e.g. PR #123, commit abc456def, design PR #789
+
+  - type: textarea
+    id: blockers
+    attributes:
+      label: Blockers & Dependencies
+      description: Any blockers, dependencies, or issues preventing progress on this asset.
+      placeholder: e.g. Waiting for UX team approval, dependent on API changes in PR #456, requires completion of base framework first.
+
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: Additional Notes
+      description: Any other relevant information, context, or considerations for this asset.
+      placeholder: e.g. This asset is part of a larger redesign effort, should be tested with colorblind users, needs to support multiple languages.
