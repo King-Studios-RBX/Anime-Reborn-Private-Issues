@@ -1,12 +1,30 @@
-name: UI Asset Tracking
-description: Track creation and implementation progress of a UI asset, including design, import, development, and testing.
-title: "[UI Asset] <UI Name>"
-labels: [asset, ui, tracking, enhancement]
+name: UI Asset (Overhaul Tracking)
+description: Track creation, integration, and testing of a UI asset as part of the Complete UI Overhaul.
+title: "[UI Overhaul] <Frame/Asset Name>"
+labels: [asset, ui, overhaul, tracking, enhancement]
 body:
+  - type: input
+    id: overhaul_category
+    attributes:
+      label: Overhaul Category
+      description: Which major UI area or frame is this asset part of? (e.g. Store, Settings, HUD)
+      placeholder: e.g. Store, HUD, Settings, Daily Rewards
+    validations:
+      required: true
+
+  - type: input
+    id: overhaul_priority
+    attributes:
+      label: Overhaul Priority
+      description: What is the asset’s priority in the overhaul? (Critical, High, Medium, Low)
+      placeholder: e.g. Critical
+    validations:
+      required: true
+
   - type: input
     id: ui_name
     attributes:
-      label: UI Name (Internal/Code Name)
+      label: Internal/Code Name
       description: What is the internal or code name for this UI asset?
       placeholder: e.g. inventory_menu
     validations:
@@ -22,11 +40,25 @@ body:
   - type: textarea
     id: ui_description
     attributes:
-      label: Description
-      description: Briefly describe the UI asset, its purpose, and key features.
-      placeholder: e.g. Menu for managing player inventory, supports drag & drop, responsive layout.
+      label: Description & Overhaul Goals
+      description: Briefly describe the UI asset and what it's meant to improve in the overhaul (clarity, navigation, etc.).
+      placeholder: e.g. Redesigned menu for managing player inventory, now with improved filtering and responsive layout.
     validations:
       required: true
+
+  - type: input
+    id: overhaul_checklist_mapping
+    attributes:
+      label: Overhaul Checklist Section(s)
+      description: Reference the Overhaul Checklist item(s) this asset implements.
+      placeholder: e.g. Store > Gamepasses; Settings > Accessibility
+
+  - type: textarea
+    id: design_refs
+    attributes:
+      label: Design/Figma Reference(s)
+      description: Link to any design files, Figma, or visual references for this asset.
+      placeholder: e.g. https://www.figma.com/file/...
 
   - type: dropdown
     id: wireframe_status
@@ -65,17 +97,6 @@ body:
       required: true
 
   - type: dropdown
-    id: imported_vide
-    attributes:
-      label: Imported Into VIDE
-      description: Has the asset been imported into VIDE (if applicable)?
-      options:
-        - Not Applicable
-        - Not Started
-        - In Progress
-        - Complete
-
-  - type: dropdown
     id: imported_codebase
     attributes:
       label: Imported Into Codebase
@@ -86,39 +107,6 @@ body:
         - Complete
     validations:
       required: true
-
-  - type: dropdown
-    id: reactive_props
-    attributes:
-      label: Reactive Props Implemented
-      description: Are UI reactive props (for data-driven updates) implemented?
-      options:
-        - Not Applicable
-        - Not Started
-        - In Progress
-        - Complete
-
-  - type: dropdown
-    id: storybook_status
-    attributes:
-      label: Story/Component Demo
-      description: Has a story or component demo (e.g. Storybook) been created?
-      options:
-        - Not Applicable
-        - Not Started
-        - In Progress
-        - Complete
-
-  - type: dropdown
-    id: player_data_synced
-    attributes:
-      label: Player-Data Synced
-      description: Is the UI synced with player-data as required?
-      options:
-        - Not Applicable
-        - Not Started
-        - In Progress
-        - Complete
 
   - type: dropdown
     id: tested_status
@@ -132,23 +120,18 @@ body:
     validations:
       required: true
 
-  - type: dropdown
-    id: finalized_status
+  - type: textarea
+    id: overhaul_testing_notes
     attributes:
-      label: Finalized/Ready for Release
-      description: Is the asset finalized and ready for use/deployment?
-      options:
-        - Not Started
-        - In Progress
-        - Complete
-    validations:
-      required: true
+      label: Overhaul Testing Notes
+      description: Any special testing focus for the overhaul (e.g. clarity, accessibility, feedback from new users).
+      placeholder: e.g. Verify clarity for new users, test on multiple devices, check accessibility scaling.
 
   - type: textarea
     id: implementation_pr
     attributes:
       label: Pull Requests / Commits
-      description: Link to any relevant PRs or commits where this asset is being implemented.
+      description: Link to any relevant PRs or commits for this asset.
       placeholder: e.g. #123, commit abc456
 
   - type: textarea
@@ -157,3 +140,4 @@ body:
       label: Notes & Blockers
       description: Anything else to note? Any blockers or dependencies?
       placeholder: e.g. Waiting on UX approval, requires API update, etc.
+````We're waiting for you to approve the branch creation so we can continue with the pull request for the revamped UI asset issue template.
