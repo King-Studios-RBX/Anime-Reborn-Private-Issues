@@ -1,0 +1,89 @@
+name: Character Asset Tracking
+description: Track creation and implementation progress of a character asset.
+title: "[Character Asset] <Character Name>"
+labels: [asset, character, tracking, enhancement]
+body:
+  - type: input
+    id: character_name
+    attributes:
+      label: Character Name (Internal/Code Name)
+      description: What is the internal or code name of the character asset?
+      placeholder: e.g. sakura_haruno
+    validations:
+      required: true
+
+  - type: input
+    id: display_name
+    attributes:
+      label: Display Name
+      description: What is the display name shown in-game?
+      placeholder: e.g. Sakura Haruno
+    validations:
+      required: true
+
+  - type: input
+    id: actual_name
+    attributes:
+      label: Actual Name
+      description: What is the character's real/full name (if different from display name)?
+      placeholder: e.g. Sakura Haruno (if same as display name, repeat)
+    validations:
+      required: true
+
+  - type: textarea
+    id: asset_description
+    attributes:
+      label: Description
+      description: Briefly describe the character asset, its role, and any notable features.
+      placeholder: e.g. Main protagonist, has special attack animations, wears a red scarf.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: art_status
+    attributes:
+      label: Art Status
+      description: What is the current status of the character's art asset?
+      options:
+        - Not Started
+        - In Progress
+        - Complete
+    validations:
+      required: true
+
+  - type: dropdown
+    id: animation_status
+    attributes:
+      label: Animation Status
+      description: What is the current status of the character's animations (if any)?
+      options:
+        - Not Applicable
+        - Not Started
+        - In Progress
+        - Complete
+
+  - type: dropdown
+    id: implementation_status
+    attributes:
+      label: Code Implementation Status
+      description: Has the asset been implemented in the codebase?
+      options:
+        - Not Started
+        - In Progress
+        - Complete
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation_pr
+    attributes:
+      label: Pull Requests / Commits
+      description: Link to any relevant PRs or commits where this asset is being implemented.
+      placeholder: e.g. #42, commit abc123
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes & Blockers
+      description: Anything else to note? Any blockers or dependencies?
+      placeholder: e.g. Waiting on concept art from artist, needs rigging before animation.
